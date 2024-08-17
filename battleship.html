@@ -53,6 +53,13 @@
         .insline{
             line-height: 40px;
         }
+        #canny{
+            width: 639px;
+            height: 640px;
+            position: absolute;
+            top: 98px;
+            left: 453px;
+        }
     </style>
     <script> 
         var messages = [
@@ -289,7 +296,8 @@
     </script>
 </head>
 <body>
-    <div id="title" onclick="p4s()">Battleship</div>
+    <div id="title" ">Battleship</div>
+    <img src="./fire.gif" id="canny" alt="">
     <div id="board">
         <div class="row">
             <div class="box" id="b00" onclick="obc(this.id)">1</div>
@@ -421,6 +429,7 @@
     </div>
     <button id="Rules" onclick="toggleRules()">Rules</button>
     <button id="Start" onclick="startGame()">Start</button>
+    
 <!-- <button id="pob" onclick="placeOwn()">place own Battleship</button> -->
 </body>
 </html>
