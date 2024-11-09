@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+          background-image: url('./NeonCity.webp');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+        }
+        #BRB{
+            position: absolute;
+            transition: all 3s;
+            left: 0px;
+            top: 0px;
+            width: 140px;
+            height: 140px;
+            user-select: none;
+        }
+        #CBT{
+            position: absolute;
+            transition: all 3s;
+            left: 0px;
+            top: 0px;
+            width: 130px;
+            height: 130px;
+            user-select: none;
+        }
+        #ADT{
+            position: absolute;
+            transition: all 1s;
+            left: 0px;
+            top: 0px;
+            width: 130px;
+            height: 130px;
+            user-select: none;
+        }
+        #CYB{
+            position: absolute;
+            transition: all 3s;
+            left: 0px;
+            top: 0px;
+            width: 160px;
+            height: 160px;
+            user-select: none;
+        }
+        #SP{
+            width: 560px;
+            height: 860px;
+            
+            right: 1px;
+            position: absolute;
+        }
+        #SC{
+            width: 500px;
+            height: 40px;
+            color:whitesmoke;
+            left: 300px;
+            font-size:30px ;
+            position: absolute;
+        }
+        </style>
+</head>
+<body>
+    <img id="BRB" src="./Barbarian.png" alt="" width="100" height="110" onclick="clickBRB()">
+    <img id="CBT" src="./Cobalt.webp" alt="" width="100" height="110" onclick="clickCBT()">
+    <img id="ADT" src="./Adetunde.png" alt="" width="100" height="110" onclick="clickADT()">
+    <img id="CYB" src="./Cyber.webp" alt="" width="100" height="110" onclick="clickCYB()">
+    <div id="SP">Item Shop</div>
+    <div id="SC">Coins:</div>
+    <img id="SCT" src="./SpinnyCoin_t.gif" alt="">
+    <script>
+        
+        var score = 0
+        
+
+        var maxRound = 30
+        var currentRound = 0
+        function getRndInteger(min, max) {
+           return Math.floor(Math.random() * (max - min) ) + min;
+        }
+        // Range:Left:1560
+                //Top:730
+                function clickBRB() {
+            console.log("Clicked!");
+            score = score + 5
+            document.getElementById("SC").innerHTML = "Coins: " + score
+            // every ten times clicked move up a round
+        }                
+        function clickCBT() {
+            console.log("Clicked!");
+            score = score + 5
+            document.getElementById("SC").innerHTML = "Coins: " + score
+            // every ten times clicked move up a round
+        }
+        function clickADT() {
+            console.log("Clicked!");
+            score = score + 50
+            document.getElementById("SC").innerHTML = "Coins: " + score
+            // every ten times clicked move up a round
+        }
+        function clickCYB() {
+            console.log("Clicked!");
+            score = score + 5
+            document.getElementById("SC").innerHTML = "Coins: " + score
+            // every ten times clicked move up a round
+        }
+
+        setInterval(() => {
+            //console.log("this log is inside interval");
+            let barbarianImg = document.getElementById("BRB")
+            var randomLeft = getRndInteger(0,1000)
+            var randomTop = getRndInteger(0,730)
+            barbarianImg.style.left = randomLeft+"px"
+            barbarianImg.style.top = randomTop+"px"
+
+            let cobaltImg = document.getElementById("CBT")
+            var randomLeft = getRndInteger(0,1000)
+            var randomTop = getRndInteger(0,730)
+            cobaltImg.style.left = randomLeft+"px"
+            cobaltImg.style.top = randomTop+"px"
+
+            let adetundeImg = document.getElementById("ADT")
+            var randomLeft = getRndInteger(0,1000)
+            var randomTop = getRndInteger(0,730)
+            adetundeImg.style.left = randomLeft+"px"
+            adetundeImg.style.top = randomTop+"px"
+            
+            let cyberImg = document.getElementById("CYB")
+            var randomLeft = getRndInteger(0,1000)
+            var randomTop = getRndInteger(0,730)
+            cyberImg.style.left = randomLeft+"px"
+            cyberImg.style.top = randomTop+"px"
+            // todo make it smooth next time
+            // todo use random position
+        }, 1000);
+        //rgba (158,158,158,0.700) for semi-transparent background
+        //rgba (2/6,69/116,60/101,0.694) for cyan-green combo
+    </script>  
+</body>
+</html>
